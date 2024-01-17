@@ -8,6 +8,10 @@ export default createGlobalStyle`
         
     }
 
+    html{
+        font-size: 62.5%;
+    }
+
     body{
         background-color: ${props => props.theme.GRAY_800};
         color: ${props => props.theme.GRAY_200};
@@ -15,7 +19,6 @@ export default createGlobalStyle`
         font-weight: 400;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: antialiased;
-        font-size: 62.5%;
     }
 
     a{
