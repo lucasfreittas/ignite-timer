@@ -9,7 +9,7 @@ export const Container = styled.section`
     
 `;
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.form`
     display: flex;
     width: 100%;
     color: ${props => props.theme.GRAY_200};
@@ -85,4 +85,22 @@ export const Button = styled.button`
     color: ${props => props.theme.GRAY_200};
     font-size: 1.6rem;
     font-weight: 700;
+    transition: all 0.1s ease-in-out;
+
+    &:hover{
+        background-color: ${props => props.theme.GREEN_700};
+    };
+
+    &:disabled{
+        opacity: 0.7;
+        cursor: not-allowed;
+    };
+
+    &.stopButton{
+        background-color: ${props => props.theme.RED_500};
+
+       &:hover{
+            background-color: ${props => props.theme.RED_700};
+        }
+    };
 `;

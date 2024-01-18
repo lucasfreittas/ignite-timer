@@ -3,7 +3,7 @@ export const defaultTheme = {
     GREEN_500: '#00875F',
     GREEN_300: '#00B37E',
 
-    RED_700: '#00875F',
+    RED_700: '#7A1921',
     RED_500: '#F03847',
 
     GRAY_900: '#29292E',
