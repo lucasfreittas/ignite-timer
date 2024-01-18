@@ -6,6 +6,8 @@ export const Container = styled.section`
 
     width: 65.5rem;
     gap: 6.4rem;
+
+    margin: auto;
     
 `;
 
