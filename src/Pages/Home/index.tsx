@@ -5,14 +5,18 @@ import {
         InputContainer, 
         TimerContainer 
 } from './styles';
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form"; //useForm para configurações do formulário, react-hook-form a bilbioteca 
 import { zodResolver } from "@hookform/resolvers/zod"; // Biblioteca integrada com react-hook-form para validação do formulário
 import * as zod from 'zod' // Importando todas as funções do zod como zod 
 import { differenceInSeconds } from "date-fns";
+import { TaskContext } from "../../Contexts/TaskContexts";
+
 
 
 export function Home() {
+
+  const { CreateTask } = useContext(TaskContext)
 
   interface Task{
     id: string,
@@ -45,21 +49,29 @@ export function Home() {
     }
   });  
 
+
+  // function handleCreateTask(data: NewTaskData){
+  //   const id = String(new Date().getTime());
+
+  //   const newTask = {
+  //     id,
+  //     task: data.task,
+  //     minutesAmount: data.minutesAmount,
+  //     startDate: new Date()
+  //   };
+
+  //   setTaskDataBase(((state) => [...state, newTask]));
+  //   setCurrentTaskId(id);
+  //   setAmountSecondsPassed(0);
+
+  //   reset();
+  // }; 
+
   function handleCreateTask(data: NewTaskData){
-    const id = String(new Date().getTime());
-
-    const newTask = {
-      id,
-      task: data.task,
-      minutesAmount: data.minutesAmount,
-      startDate: new Date()
-    };
-
-    setTaskDataBase(((state) => [...state, newTask]));
-    setCurrentTaskId(id);
-    setAmountSecondsPassed(0);
-
-    reset();
+    CreateTask({
+      task: 'Cheguei aqui',
+      minutesAmount: 20
+    })
   }; 
 
   function handleInterruptTask(){

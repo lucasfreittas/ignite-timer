@@ -8,6 +8,7 @@ import GlobalStyle from './Styles/global';
 import { BrowserRouter } from "react-router-dom";
 import { Router } from './Routes/router';
 
+import { TaskContextProvider } from './Contexts/TaskContexts';
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -15,7 +16,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
         <BrowserRouter>
-          <Router />
+          <TaskContextProvider>
+            <Router />
+          </TaskContextProvider>
         </BrowserRouter>
     </ThemeProvider>
     
